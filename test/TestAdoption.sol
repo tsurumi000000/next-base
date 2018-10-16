@@ -16,12 +16,14 @@ contract TestAdoption {
     function testGetAdopterAddressByPetId() public {
         address expected = this;
         address adopter = adoption.adopters(8);
+        // 1人のペットのオーナーの検索のテスト
         Assert.equal(adopter, expected, "Owner of pet ID 8 should be recorded.");
     }
 
     function testgetAdopterAddressByIdInArray() public {
         address expected = this;
         address[16] memory adopters = adoption.getAdopters();
+        // すべてのペットのオーナーの検索のテスト
         Assert.equal(adopters[8], expected, "Owner of pet ID 8 should be recorded.");
     }
 }
